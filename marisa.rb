@@ -16,7 +16,7 @@ class Marisa < Formula
     system "make", "install"
 
     architectures = ["armv7", "armv7s"]
-    architectures.each { |arch| compile_for_arch(arch) }    
+    architectures.each { |arch| compile_for_arch(arch) }
   end
 
   def compile_for_arch(arch)
