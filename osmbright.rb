@@ -9,15 +9,15 @@ class Osmbright < Formula
   depends_on 'wget'
 
   def install
-
     system 'cp configure.py.sample configure.py'
-    system 'python make.py'
 
     system 'wget http://tilemill-data.s3.amazonaws.com/osm/coastline-good.zip'
     system 'wget http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip'
     system 'wget http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-land.zip'
 
     share.install Dir['*']
+
+    system "cd #{share} && python make.py"
   end
 
   test do
